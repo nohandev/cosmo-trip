@@ -1,7 +1,9 @@
+import Hero from '@/components/Hero'
+
 const App = () => {
   return (
     <div>
-      Hello Balacobaco
+      <Hero/>
     </div>
   )
 }
