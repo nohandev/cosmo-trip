@@ -1,27 +1,40 @@
+import clsx from 'clsx'
 
+type ButtonVariant = 'primary' | 'secondary'
+
+interface ButtonStylesProps {
+  variant: ButtonVariant
+}
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement>{
-  variant?: 'outline'
+  variant: ButtonVariant
   children: React.ReactNode
-  icon?: React.ReactNode
   className?: string
+}
+
+export function buttonStyles({ variant }: ButtonStylesProps) {
+  return clsx(
+    'flex items-center gap-2 px-6 py-3 font-medium transition-all cursor-pointer',
+    'hover:scale-105',
+    {
+      'bg-pink text-white':
+        variant === 'primary',
+      'border border-white/20 text-white':
+        variant === 'secondary',
+    }
+  )
 }
 
 const Button:React.FC<ButtonProps> = ({
   children,
-  variant,
+  variant = 'primary',
   className,
-  icon,
   ...props
 }) => {
   return (
     <button 
-    className={
-      `px-8 py-2 bg-pink text-white border border-pink font-alexandria cursor-pointer rounded-lg flex gap-2 items-center transition-transform hover:scale-105
-      ${variant === 'outline' ? 'bg-transparent border-white' : ''}
-      ${className}`}
+    className={`${buttonStyles({ variant })} ${className ?? ''}`}
     {...props}>
-      {icon && <>{icon}</>}
       {children}
     </button>
   )
