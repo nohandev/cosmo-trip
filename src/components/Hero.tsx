@@ -44,7 +44,7 @@ const Hero = () => {
               </span>
             </div>
             <div>
-              <h1 className='font-bold text-white text-5xl'>
+              <h1 className='font-bold text-white text-5xl/14 '>
                 Sua próxima viagem pode ser para fora deste mundo!
               </h1>
             </div>
@@ -55,10 +55,10 @@ const Hero = () => {
             </div>
             <div className='flex gap-6'>
               <Button variant='primary' className='rounded-md'>
-                Explocar Destinos
+                Explorar Destinos
               </Button>
               <Button variant='secondary' className='rounded-md'>
-                 <Rocket/> Ver Pacote
+                 <Rocket size={16}/> Ver Pacote
               </Button>
               </div>
           </div>
