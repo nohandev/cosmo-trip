@@ -2,6 +2,13 @@ import Button from '@/components/ui/Button'
 import { Rocket, Dot } from 'lucide-react'
 
 const Hero = () => {
+
+  const scrollToSection = (id: string): void => {
+  document.getElementById(id)?.scrollIntoView({
+    behavior: 'smooth'
+  })
+}
+
   return (
     <section className='h-screen bg-black'>
       <div className='w-full max-w-8xl mx-auto p-4'>
@@ -13,17 +20,14 @@ const Hero = () => {
           </div>
 
           <nav>
-            <ul className='flex'>
-              <li className='text-gray cursor-pointer px-6 hover:text-pink hover:font-bold'>
-                Início
-              </li>
-              <li className='text-gray cursor-pointer px-6 hover:text-pink hover:font-bold'>
+            <ul className='flex gap-6'>
+              <li className='text-gray cursor-pointer px-6 hover:text-pink hover:underline' onClick={() => scrollToSection('destino')}>
                 Destino
               </li>
-              <li className='text-gray cursor-pointer px-6 hover:text-pink hover:font-bold'>
+              <li className='text-gray cursor-pointer px-6 hover:text-pink hover:underline'>
                 Pacotes
               </li>
-              <li className='text-gray cursor-pointer px-6 hover:text-pink hover:font-bold'>
+              <li className='text-gray cursor-pointer px-6 hover:text-pink hover:underline'>
                 Contato
               </li>
             </ul>

@@ -1,14 +1,13 @@
 import { Star, Calendar } from 'lucide-react'
 import Button from '@/components/ui/Button'
-import { formatter } from '@/utils/utilities' 
 
 interface DestinationsCardProps {
   name: string
   description: string
-  rating: number
-  reviews: number
-  durationDays: number
-  price: number
+  rating: number | string
+  reviews: number | string
+  durationDays: number | string
+  price: number | string
   img: {
     src: string,
     alt: string
@@ -58,7 +57,7 @@ img
               
               ))}
           </div>
-          <span className='text-sm text-gray'>{`(${rating}/5 – ${reviews} avaliações)`}</span>
+          <span className='text-sm text-gray'>{`${rating}/5.0 – ${reviews} avaliações)`}</span>
         </div>
 
         <div className='py-3 flex items-baseline justify-between'>
@@ -68,7 +67,7 @@ img
           </div>
 
           <div>
-            <p className='text-white text-xl font-bold'>{formatter.format(price)}</p>
+            <p className='text-white text-xl font-bold'>{price}</p>
           </div>
         </div>
 

@@ -1,5 +1,6 @@
 import Badge from '@/components/ui/Badge'
 import DestinationsCard from '@/components/ui/DestinationsCard'
+import { formatterToBrl } from '@/utils/utilities' 
 
 const data = [
   {
@@ -61,11 +62,11 @@ const data = [
   }
 ]
 
-
+const formatCurrencyBRL: (value: number) => string = (value) => String(formatterToBrl.format(value))
 
 const PopularDestinations = () => {
   return (
-    <section className='bg-black min-h-screen'>
+    <section className='bg-black min-h-screen' id='destino'>
       <div className='w-full max-w-8xl mx-auto p-4'>
         <div className='py-4 w-full max-w-xl mx-auto flex flex-col items-center justify-center gap-6'>
           <Badge>Destinos</Badge>
@@ -80,9 +81,9 @@ const PopularDestinations = () => {
               name={name}
               description={description}
               img={img}
-              durationDays={durationDays}
-              price={price}
-              rating={rating}
+              durationDays={String(durationDays).padStart(2, '0')}
+              price={formatCurrencyBRL(price)}
+              rating={rating.toFixed(1)}
               reviews={reviews}/>
           ))}
         </section>
