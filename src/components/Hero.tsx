@@ -1,5 +1,6 @@
 import Button from '@/components/ui/Button'
 import { Rocket, Dot } from 'lucide-react'
+import { motion } from 'motion/react'
 
 const Hero = () => {
 
@@ -10,13 +11,25 @@ const Hero = () => {
 }
 
   return (
-    <section className='h-screen bg-black'>
+    <section className='h-screen bg-black overflow-hidden'>
       <div className='w-full max-w-8xl mx-auto p-4'>
-        <header className='flex items-center justify-between font-alexandria'>
+        <motion.header 
+        className='flex items-center justify-between font-alexandria'
+        initial={{opacity: 0, y: -30}}
+        animate={{opacity: 1, y: 0}}
+        transition={{
+          duration: 0.7,
+          ease: 'easeIn'
+        }}>
           <div>
-            <img 
+            <motion.img 
               src='/logo.png'
-              alt='cosmo trip logo'/>
+              alt='cosmo trip logo'
+              className='w-full object-cover cursor-pointer'
+              whileHover={{
+                scale: 1.1,
+                rotate: 3 
+              }}/>
           </div>
 
           <nav>
@@ -37,10 +50,17 @@ const Hero = () => {
               Reserve sua viagem
             </Button>
           </div>
-        </header>
+        </motion.header>
 
         <article className='flex items-center justify-between mt-24'>
-          <div className='flex flex-col items-start gap-6 flex-1'>
+          <motion.div 
+            className='flex flex-col items-start gap-6 flex-1'
+            initial={{opacity: 0, x: -300}}
+            animate={{opacity: 1, x: 0}}
+            transition={{
+              duration: 0.6,
+              delay: 0.5
+            }}>
             <div>
               <span className='border border-white text-pink flex  rounded-md font-bold font-alexandria center pr-3 py-1'>
                 <Dot />
@@ -65,10 +85,19 @@ const Hero = () => {
                  <Rocket size={16}/> Ver Pacote
               </Button>
               </div>
-          </div>
+          </motion.div>
 
           <div className=''>
-            <img src='/hero-illustration.png' alt='planet illustration' />
+            <motion.img 
+              src='/hero-illustration.png' 
+              alt='planet illustration'
+              className='w-full object-cover'
+              initial={{opacity: 0, x: 300}}
+              animate={{opacity: 1, x: 0}}
+              transition={{
+                duration: 0.6,
+                delay: 0.5
+              }}/>
           </div>
         </article>
       </div>
