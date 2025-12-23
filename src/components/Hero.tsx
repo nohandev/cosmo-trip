@@ -11,7 +11,7 @@ const Hero = () => {
 }
 
   return (
-    <section className='h-screen bg-black overflow-hidden'>
+    <section className='h-[120dvh] bg-black overflow-hidden'>
       <div className='w-full max-w-8xl mx-auto p-4'>
         <motion.header 
         className='flex items-center justify-between font-alexandria'
