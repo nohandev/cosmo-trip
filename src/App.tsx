@@ -1,6 +1,7 @@
 import Hero from '@/components/Hero'
 import Brands from '@/components/Brands'
 import PopularDestinations from '@/components/PopularDestinations'
+import HighlightsTrip from '@/components/HighlightsTrip'
 
 const App = () => {
   return (
@@ -8,6 +9,7 @@ const App = () => {
       <Hero/>
       <Brands/>
       <PopularDestinations/>
+      <HighlightsTrip/>
     </div>
   )
 }

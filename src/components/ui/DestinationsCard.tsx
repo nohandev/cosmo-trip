@@ -1,18 +1,13 @@
-import { Star, Calendar } from 'lucide-react'
+import { Calendar } from 'lucide-react'
 import Button from '@/components/ui/Button'
+import type { DestinationsType } from '@/types/types'
+import { RatingStars } from './RatingStars'
+import { formatCurrencyBRL } from '@/utils/utilities'
 
-interface DestinationsCardProps {
-  name: string
-  description: string
-  rating: number | string
-  reviews: number | string
-  durationDays: number | string
-  price: number | string
-  img: {
-    src: string,
-    alt: string
-  }
-}
+type DestinationsCardProps = Omit<
+  DestinationsType,
+  'id' | 'highlights'
+>
 
 const DestinationsCard = ({
 name, 
@@ -46,18 +41,9 @@ img
 
         <div className='py-2 flex gap-3 items-baseline'>
           <div className='flex gap-1'>
-            {Array
-              .from({length: 5})
-              .map((_, i) => (
-                <Star 
-                key={i} 
-                className='text-pink' 
-                size={14} 
-                fill='currentColor'/>
-              
-              ))}
+            <RatingStars value={rating}/>
           </div>
-          <span className='text-sm text-gray'>{`${rating}/5.0 – ${reviews} avaliações)`}</span>
+          <span className='text-sm text-gray'>{`${reviews} avaliações`}</span>
         </div>
 
         <div className='py-3 flex items-baseline justify-between'>
@@ -67,7 +53,7 @@ img
           </div>
 
           <div>
-            <p className='text-white text-xl font-bold'>{price}</p>
+            <p className='text-white text-xl font-bold'>{formatCurrencyBRL(price)}</p>
           </div>
         </div>
 
