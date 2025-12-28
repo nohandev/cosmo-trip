@@ -37,8 +37,11 @@ const Hero = () => {
               <li className='text-gray cursor-pointer px-6 hover:text-pink hover:underline' onClick={() => scrollToSection('destino')}>
                 Destino
               </li>
-              <li className='text-gray cursor-pointer px-6 hover:text-pink hover:underline'>
-                Pacotes
+              <li className='text-gray cursor-pointer px-6 hover:text-pink hover:underline' onClick={() => scrollToSection('destaque')}>
+                Destaques
+              </li>
+              <li className='text-gray cursor-pointer px-6 hover:text-pink hover:underline' onClick={() => scrollToSection('depoimentos')}>
+                Depoimentos
               </li>
               <li className='text-gray cursor-pointer px-6 hover:text-pink hover:underline'>
                 Contato
