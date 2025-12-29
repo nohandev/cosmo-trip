@@ -11,10 +11,10 @@ export interface DestinationsType {
   durationDays: number
   price: number
   img: {
-    src: string,
+    src: string
     alt: string
   }
-  highlights: string[]
+  highlights?: string[]
 }
 
 // Testemonials
@@ -32,8 +32,16 @@ export interface TestimonialsType {
 // Highlights
 
 export interface HighlightsType {
-  id?: number,
+  id?: number
   title: string
   description: string
   icon: LucideIcon
+}
+
+// FAQ
+
+export interface AccordionType {
+  id: number
+  title: string
+  content: React.ReactNode
 }

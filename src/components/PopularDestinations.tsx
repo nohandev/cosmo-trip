@@ -5,7 +5,7 @@ import { destinations } from '@/services/services'
 
 const PopularDestinations = () => {
   return (
-    <section className='bg-black min-h-screen' id='destino'>
+    <section className='bg-black min-h-screen scroll-mt-16' id='destino'>
       <div className='w-full max-w-8xl mx-auto p-4'>
         <div className='py-4 w-full max-w-xl mx-auto flex flex-col items-center justify-center gap-6'>
           <Badge>Destinos</Badge>

@@ -5,7 +5,7 @@ import type { HighlightsType } from '@/types/types'
 
 const HighlightsTrip = () => {
   return (
-    <section className='min-h-screen bg-l-black' id='destaque'>
+    <section className='min-h-screen bg-l-black scroll-mt-18' id='destaque'>
       <div className='w-full max-w-8xl mx-auto p-4'>
         <div className='flex flex-col justify-center items-center gap-8 py-8 w-full max-w-xl mx-auto'>
           <Badge>Destaques</Badge>

@@ -3,6 +3,7 @@ import Brands from '@/components/Brands'
 import PopularDestinations from '@/components/PopularDestinations'
 import HighlightsTrip from '@/components/HighlightsTrip'
 import Testimonials from '@/components/Testimonials'
+import Faq from '@/components/Faq'
 
 const App = () => {
   return (
@@ -12,6 +13,7 @@ const App = () => {
       <PopularDestinations/>
       <HighlightsTrip/>
       <Testimonials/>
+      <Faq/>
     </div>
   )
 }

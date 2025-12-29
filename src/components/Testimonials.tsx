@@ -5,7 +5,7 @@ import type { TestimonialsType } from '@/types/types'
 
 const Testimonials = () => {
   return (
-    <section className='min-h-screen bg-black' id='depoimentos'>
+    <section className='min-h-screen bg-black scroll-mt-14' id='depoimentos'>
       <div className='w-full max-w-8xl mx-auto p-4'>
         <div className='flex flex-col justify-center items-center gap-8 py-8 w-full max-w-xl mx-auto'>
           <Badge>Depoimentos</Badge>

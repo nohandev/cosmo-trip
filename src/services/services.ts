@@ -1,7 +1,8 @@
 import type { 
   DestinationsType, 
   TestimonialsType,
-  HighlightsType
+  HighlightsType,
+  AccordionType
 } from '@/types/types'
 import { Rocket, Orbit, User } from 'lucide-react'
 
@@ -137,5 +138,38 @@ export const highlights: HighlightsType[] = [
     description:
       'Sinta-se como um verdadeiro astronauta com atividades e treinamentos imersivos durante a viagem.',
     icon: User,
+  },
+]
+
+export const accordionData: AccordionType[] = [
+  {
+    id: 1,
+    title: 'É seguro viajar para o espaço?',
+    content:
+      'As viagens espaciais seguem protocolos rigorosos de segurança e passam por múltiplas etapas de testes antes do lançamento. Embora envolvam riscos, as tecnologias atuais e o treinamento da tripulação reduzem significativamente as chances de incidentes.',
+  },
+  {
+    id: 2,
+    title: 'O que está incluso no valor da viagem?',
+    content:
+      'O pacote inclui treinamento pré-voo, equipamentos de segurança, trajes espaciais, suporte médico, acomodação antes do lançamento e a experiência completa da missão espacial.',
+  },
+  {
+    id: 3,
+    title: 'Preciso de treinamento antes do embarque?',
+    content:
+      'Sim. Todos os passageiros passam por um treinamento preparatório que inclui simulações de gravidade zero, orientações de segurança e adaptação às condições da viagem.',
+  },
+  {
+    id: 4,
+    title: 'Qual é a duração média das viagens?',
+    content:
+      'A duração varia conforme o tipo de missão, mas viagens turísticas suborbitais costumam durar entre 2 e 4 horas, enquanto missões orbitais podem se estender por vários dias.',
+  },
+  {
+    id: 5,
+    title: 'Quais formas de pagamento são aceitas?',
+    content:
+      'Aceitamos cartões de crédito internacionais, transferências bancárias e criptomoedas selecionadas. Parcelamentos e planos personalizados podem estar disponíveis mediante consulta.',
   },
 ]

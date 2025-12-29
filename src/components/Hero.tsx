@@ -5,56 +5,62 @@ import { motion } from 'motion/react'
 const Hero = () => {
 
   const scrollToSection = (id: string): void => {
-  document.getElementById(id)?.scrollIntoView({
-    behavior: 'smooth'
-  })
-}
+    document.getElementById(id)?.scrollIntoView({
+      behavior: 'smooth'
+    })
+  }
 
   return (
     <section className='h-[120dvh] bg-black overflow-hidden'>
-      <div className='w-full max-w-8xl mx-auto p-4'>
-        <motion.header 
-        className='flex items-center justify-between font-alexandria'
+      <motion.header 
+        className='font-alexandria fixed top-0 left-1/2 -translate-x-1/2 py-2 w-full bg-black z-10'
         initial={{opacity: 0, y: -30}}
         animate={{opacity: 1, y: 0}}
         transition={{
           duration: 0.7,
           ease: 'easeIn'
         }}>
-          <div>
-            <motion.img 
-              src='/logo.png'
-              alt='cosmo trip logo'
-              className='w-full object-cover cursor-pointer'
-              whileHover={{
-                scale: 1.1,
-                rotate: 3 
-              }}/>
-          </div>
+          <div className='max-w-8xl flex items-center justify-between mx-auto py-4'>
+            <div>
+              <motion.img 
+                src='/logo.png'
+                alt='cosmo trip logo'
+                className='w-full object-cover cursor-pointer'
+                whileHover={{
+                  scale: 1.1,
+                  rotate: 3 
+                }}/>
+            </div>
 
-          <nav>
-            <ul className='flex gap-6'>
-              <li className='text-gray cursor-pointer px-6 hover:text-pink hover:underline' onClick={() => scrollToSection('destino')}>
-                Destino
-              </li>
-              <li className='text-gray cursor-pointer px-6 hover:text-pink hover:underline' onClick={() => scrollToSection('destaque')}>
-                Destaques
-              </li>
-              <li className='text-gray cursor-pointer px-6 hover:text-pink hover:underline' onClick={() => scrollToSection('depoimentos')}>
-                Depoimentos
-              </li>
-              <li className='text-gray cursor-pointer px-6 hover:text-pink hover:underline'>
-                Contato
-              </li>
-            </ul>
-          </nav>
-          <div>
-            <Button variant='primary' className='rounded-lg'>
-              Reserve sua viagem
-            </Button>
+            <nav>
+              <ul className='flex gap-3 justify-between items-center'>
+                <li className='text-gray cursor-pointer px-6 hover:text-pink hover:underline' onClick={() => scrollToSection('destino')}>
+                  Destinos
+                </li>
+                <li className='text-gray cursor-pointer px-6 hover:text-pink hover:underline' onClick={() => scrollToSection('destaque')}>
+                  Destaques
+                </li>
+                <li className='text-gray cursor-pointer px-6 hover:text-pink hover:underline' onClick={() => scrollToSection('depoimentos')}>
+                  Depoimentos
+                </li>
+                <li className='text-gray cursor-pointer px-6 hover:text-pink hover:underline' onClick={() => scrollToSection('faq')}>
+                  FAQ
+                </li>
+                <li className='text-gray cursor-pointer px-6 hover:text-pink hover:underline'>
+                  Contato
+                </li>
+              </ul>
+            </nav>
+
+            <div>
+              <Button variant='primary' className='rounded-lg'>
+                Reserve sua viagem
+              </Button>
+            </div>
           </div>
         </motion.header>
 
+      <div className='w-full max-w-8xl mx-auto p-4'>
         <article className='flex items-center justify-between mt-24'>
           <motion.div 
             className='flex flex-col items-start gap-6 flex-1'
