@@ -1,7 +1,7 @@
 import { motion, type HTMLMotionProps } from 'motion/react'
 import clsx from 'clsx'
 
-type ButtonVariant = 'primary' | 'secondary'
+type ButtonVariant = 'primary' | 'secondary' | 'circle'
 
 interface ButtonStylesProps {
   variant: ButtonVariant
@@ -15,11 +15,12 @@ interface ButtonProps extends HTMLMotionProps<'button'> {
 
 export function buttonStyles({ variant }: ButtonStylesProps) {
   return clsx(
-    'relative flex items-center justify-center gap-2 px-6 py-3 font-medium rounded-xl cursor-pointer',
+    'flex items-center justify-center gap-2 font-medium cursor-pointer',
     'transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-pink/60',
     {
-      'bg-pink text-white': variant === 'primary',
-      'border border-white/20 text-white': variant === 'secondary',
+      'bg-pink text-white rounded-xl px-6 py-3': variant === 'primary',
+      'border border-white/20 text-white rounded-xl px-6 py-3': variant === 'secondary',
+      'rounded-full p-2 text-center bg-pink text-white': variant === 'circle',
     }
   )
 }
