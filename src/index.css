@@ -13,7 +13,11 @@ html {
   --color-d-gray: #4D4D4D;
   --color-gray: #999999;
   --color-pink: #FF3CAC;
+  --color-danger: #DC143C;
+  --color-success: #008000;
+
   --font-alexandria:'Alexandria', sans-serif ;
   --font-inter:'Inter', sans-serif ;
+
   --spacing-8xl: 1440px;
 }
